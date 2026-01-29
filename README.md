@@ -51,6 +51,9 @@ it and enable it. Then grab the API key from the plugin settings so we can use i
 
 ## Setting up the LLM client (Roo Code)
 
+UPDATE 29.1.2026: If you don't want to use VS Code, there's now a plugin that for the Intellij family of IDEs 
+called Kilo Code. It is a fork of Roo Code and the setup is _exactly_ the same. 
+
 To integrate an LLM client with Obsidian, we will need to pick a client first. I came up with this workflow
 while using Roo Code, so I'll show you how to set it up with Roo Code. If you want to use another LLM client that is
 less
@@ -125,6 +128,17 @@ was easily fixable but the fix had not made it to the codebase, you can do the f
   }
 }
 ```
+
+Finally we need add our custom prompt to be included in all modes. 
+
+Open the Roo Code settings --> Agent Behaviour and find the section called `Custom Intstructions for All Modes`. 
+Paste the file `ai_agent_prompt.md` into that field, edit the custom template location and that's it! 
+
+Now the LLM client should include your instructions whenever you query it!
+(_Keep in mind: LLMs are non-deterministic. So sometimes it will just NOT act according to the prompt! 
+But it should take it into account most of the time!)
+
+![img.png](images/agent_behaviour.png)
 
 
 
